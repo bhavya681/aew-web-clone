@@ -1,9 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "storage.googleapis.com", pathname: "/allelitewrestling-com-prod/**" },
+      { protocol: "https", hostname: "shopaew.com", pathname: "/**" },
+      { protocol: "https", hostname: "www.allelitewrestling.com", pathname: "/**" },
+    ],
+  },
   turbopack: {
     rules: {
       "*.css": {
